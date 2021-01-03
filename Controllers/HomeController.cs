@@ -20,7 +20,7 @@ namespace CarBidMVC.Controllers
 
         public IActionResult Index()
         {
-            return Redirect("Cars/Auction");
+            return Redirect("/auction/damaged");
         }
 
         public IActionResult Privacy()
