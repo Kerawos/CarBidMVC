@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CarBidMVC.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,11 @@ namespace CarBidMVC.Controllers
 {
     public class CarsDamagedController : Controller
     {
-        public IActionResult Index()
+        //GET: CarsDamaged/Auction
+        public IActionResult Auction()
         {
-            return View();
+            var Car = new Car(1, "Clio");
+            return View(Car);
         }
     }
 }
