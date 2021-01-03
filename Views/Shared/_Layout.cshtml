@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        
-    </header>
+    @await Html.PartialAsync("_NavBar")
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
