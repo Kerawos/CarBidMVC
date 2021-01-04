@@ -9,6 +9,11 @@ namespace CarBidMVC
 {
     public class CarBidDbContext : DbContext
     {
+        public CarBidDbContext(DbContextOptions<CarBidDbContext> options) 
+            : base(options)
+        {
+
+        }
         public DbSet<Car> Cars { get; set; }
     }
 
