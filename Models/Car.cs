@@ -15,8 +15,9 @@ namespace CarBidMVC.Models
         public string Info { get; set; }
         public IEnumerable<Image> Images { get; set; }
         public Image ImageMini { get; set; }
+        public bool Damaged { get; set; }
 
-        public Car(int iD, string title, DateTime timeAuctionStart, DateTime timeAuctionEnd, string linkToAuction, string info, List<Image> images)
+        public Car(int iD, string title, DateTime timeAuctionStart, DateTime timeAuctionEnd, string linkToAuction, string info, bool damaged, List<Image> images)
         {
             this.Id = iD;
             this.Title = title;
@@ -24,6 +25,7 @@ namespace CarBidMVC.Models
             this.TimeAuctionEnd = timeAuctionEnd;
             this.LinkToAuction = linkToAuction;
             this.Info = info;
+            this.Damaged = damaged;
             this.Images = images;
             if (Images.Any())
                 this.ImageMini = Images.First();

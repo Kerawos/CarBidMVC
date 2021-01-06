@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CarBidMVC.CarContextDb;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,12 @@ namespace CarBidMVC.Controllers
     public class AuctionController : Controller
     {
 
-        private ApplicationDbContext context;
+        private CarDBContext DbContext;
+
+        public AuctionController()
+        {
+            DbContext = new CarDBContext();
+        }
 
         //  auction/damaged
         public IActionResult Damaged()
