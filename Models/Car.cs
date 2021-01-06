@@ -9,14 +9,40 @@ namespace CarBidMVC.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public DateTime TimeAuctionStart { get; set; }
+        public DateTime TimeAuctionEnd { get; set; }
+        public string LinkToAuction { get; set; }
+        public string Info { get; set; }
+        public IEnumerable<Image> Images { get; set; }
+        public Image ImageMini { get; set; }
 
-        public Car(int id, string title)
+        public Car(int iD, string title, DateTime timeAuctionStart, DateTime timeAuctionEnd, string linkToAuction, string info, List<Image> images)
         {
-            Id = id;
-            Title = title;
+            this.Id = iD;
+            this.Title = title;
+            this.TimeAuctionStart = timeAuctionStart;
+            this.TimeAuctionEnd = timeAuctionEnd;
+            this.LinkToAuction = linkToAuction;
+            this.Info = info;
+            this.Images = images;
+            if (Images.Any())
+                this.ImageMini = Images.First();
+            else
+                this.ImageMini = new Image("");
         }
 
+        public Car(int iD, string title, DateTime timeAuctionStart, DateTime timeAuctionEnd)
+        {
+            this.Id = iD;
+            this.Title = title;
+            this.TimeAuctionStart = timeAuctionStart;
+            this.TimeAuctionEnd = timeAuctionEnd;
+        }
 
+        public Car()
+        {
+
+        }
 
     }
 }
