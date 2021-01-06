@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarBidMVC.CarContextDb
 {
-    public class CarDBContext : DbContext
+    public class CarDbContext : DbContext
     {
-        public CarDBContext(DbContextOptions<CarDBContext> options) : base(options)
+        public CarDbContext(DbContextOptions<CarDbContext> options) : base(options)
         {
 
         }

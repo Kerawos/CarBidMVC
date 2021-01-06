@@ -11,11 +11,11 @@ namespace CarBidMVC.Controllers
     public class AuctionController : Controller
     {
 
-        private CarDBContext DbContext;
+        private CarDbContext DbContext;
 
         public AuctionController()
         {
-            DbContext = new CarDBContext();
+            //DbContext = new CarDBContext();
         }
 
         //  auction/damaged
