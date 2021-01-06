@@ -12,6 +12,7 @@ namespace CarBidMVC.CarLibary
         IEnumerable<Car> GetAllByName(string name);
         Car GetByID(int id);
         Car Add(Car newCar);
+        Car Delete(int id);
         int Commit();
     }
 }

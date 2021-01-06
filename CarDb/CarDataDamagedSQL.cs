@@ -22,6 +22,11 @@ namespace CarBidMVC.CarDb
             return newCar;
         }
 
+        public int Commit()
+        {
+            return db.SaveChanges();
+        }
+
         public IEnumerable<Car> GetAll()
         {
             throw new NotImplementedException();
