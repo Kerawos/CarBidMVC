@@ -11,5 +11,7 @@ namespace CarBidMVC.CarLibary
         IEnumerable<Car> GetAll();
         IEnumerable<Car> GetAllByName(string name);
         Car GetByID(int id);
+        Car Add(Car newCar);
+        int Commit();
     }
 }

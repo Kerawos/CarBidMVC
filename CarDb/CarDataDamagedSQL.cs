@@ -16,6 +16,12 @@ namespace CarBidMVC.CarDb
             this.db = db;
         }
 
+        public Car Add(Car newCar)
+        {
+            db.Add(newCar);
+            return newCar;
+        }
+
         public IEnumerable<Car> GetAll()
         {
             throw new NotImplementedException();
