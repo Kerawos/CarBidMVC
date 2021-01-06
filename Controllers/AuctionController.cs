@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace CarBidMVC.Controllers
 {
     public class AuctionController : Controller
     {
+
+        private ApplicationDbContext context;
+
         //  auction/damaged
         public IActionResult Damaged()
         {
