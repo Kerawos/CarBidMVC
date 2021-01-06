@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CarBidMVC.CarDb
 {
-    public class CarDataDamagedSQL : ICarDataDamaged
+    public class CarDataSQL : ICarDataDamaged
     {
         private readonly CarDbContext db;
 
-        public CarDataDamagedSQL(CarDbContext db)
+        public CarDataSQL(CarDbContext db)
         {
             this.db = db;
         }
@@ -42,7 +42,11 @@ namespace CarBidMVC.CarDb
 
         public IEnumerable<Car> GetAllByName(string name)
         {
-            throw new NotImplementedException();
+            var query = from c in db.Cars
+                        where c.Title.StartsWith(name) || string.IsNullOrEmpty(name)
+                        orderby c.Title
+                        select c;
+            return query;
         }
 
         public IEnumerable<Car> GetAllDamaged()
@@ -52,7 +56,7 @@ namespace CarBidMVC.CarDb
 
         public Car GetByID(int id)
         {
-            throw new NotImplementedException();
+            return db.Cars.Find(id);
         }
     }
 }

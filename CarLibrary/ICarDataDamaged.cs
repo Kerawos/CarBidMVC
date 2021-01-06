@@ -10,5 +10,6 @@ namespace CarBidMVC.CarLibrary
     public interface ICarDataDamaged : ICarData
     {
         IEnumerable<Car> GetAllDamaged();
+        IEnumerable<Car> GetAllDamagedByName(string name);
     }
 }

@@ -9,6 +9,7 @@ namespace CarBidMVC.CarLibrary
 {
     public interface ICarDataUndamaged : ICarData
     {
-        IEnumerable<Car> GetAllDamaged();
+        IEnumerable<Car> GetAllUnamaged();
+        IEnumerable<Car> GetAllUndamagedByName(string name);
     }
 }
