@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using CarBidMVC.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CarBidMVC.CarContextDb
+namespace CarBidMVC.CarDb
 {
     public class CarDbContext : DbContext
     {
