@@ -27,6 +27,14 @@ namespace CarBidMVC.CarDb
             return db.SaveChanges();
         }
 
+        public Car Delete(int id)
+        {
+            var car = GetByID(id);
+            if (car != null)
+                db.Cars.Remove(car);
+            return car;
+        }
+
         public IEnumerable<Car> GetAll()
         {
             throw new NotImplementedException();
