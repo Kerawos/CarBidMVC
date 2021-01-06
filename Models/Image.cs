@@ -7,12 +7,12 @@ namespace CarBidMVC.Models
 {
     public class Image
     {
-        public int ID { get; set; }
-        public string URL { get; set; }
+        public int Id { get; set; }
+        public string Url { get; set; }
 
         public Image(string url)
         {
-            this.URL = url;
+            this.Url = url;
         }
 
         public Image()
