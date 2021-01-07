@@ -1,4 +1,6 @@
 ﻿using CarBidMVC.CarDb;
+using CarBidMVC.CarLibary;
+using CarBidMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,17 +13,20 @@ namespace CarBidMVC.Controllers
     public class AuctionController : Controller
     {
 
-        private CarDbContext DbContext;
+        private readonly ICarData CarData;
+        public IEnumerable<Car> Cars { get; set; }
 
-        public AuctionController()
+        public AuctionController(ICarData carData)
         {
+            this.CarData = carData;
             //DbContext = new CarDBContext();
         }
 
         //  auction/damaged
         public IActionResult Damaged()
         {
-            return View();
+            Cars = CarData.GetAll();
+            return View(Cars);
         }
 
         //  auction/undamaged

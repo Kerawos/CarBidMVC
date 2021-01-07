@@ -1,4 +1,4 @@
-﻿
+﻿@model CarBidMVC.Controllers.AuctionController
 @{
     ViewData["Title"] = "Damaged";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,21 +7,25 @@
 <h1>Aktualne Aukcje</h1>
 
 <table class="table">
-    @foreach (var car in Model.Cars)
     {
-        <tr>
-            <td>@car.Title</td>
-            <td>
-                <img src="@car.ImageMini.URL" class="img-thumbnail" / width="120">
-            </td>
-            <td>Koniec Aukcji: <br /> @car.TimeAuctionEnd</td>
-            <td>
-                <a class="btn btn-info"
-                   asp-page="./Detail" asp-route-carID="@car.ID">
+        @foreach (var car in Model.Cars)
+        {
+            <tr>
+                <td>@car.Title</td>
+                <td>
+                    <img src="@car.ImageMini.Url" class="img-thumbnail" / width="120">
+                </td>
+                <td>Koniec Aukcji: <br /> @car.TimeAuctionEnd</td>
+                <td>
+                    <a class="btn btn-info"
+                       asp-page="./Detail" asp-route-carID="@car.Id">
 
-                    Detale
-                </a>
-            </td>
-        </tr>
+                        Detale
+                    </a>
+                </td>
+            </tr>
+        }
     }
+    
+
 </table>
