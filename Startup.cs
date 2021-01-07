@@ -1,4 +1,5 @@
 using CarBidMVC.CarDb;
+using CarBidMVC.CarLibary;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,7 +30,7 @@ namespace CarBidMVC
             {
                 options.UseSqlServer(Configuration.GetConnectionString("CarBidDb"));
             });
-            //services.AddSingleton<>
+            services.AddScoped<ICarData, CarDataSQL>();
             services.AddControllersWithViews();
         }
 
