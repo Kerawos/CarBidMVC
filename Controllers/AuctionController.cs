@@ -26,7 +26,7 @@ namespace CarBidMVC.Controllers
         public IActionResult Damaged()
         {
             Cars = CarData.GetAll();
-            return View(Cars);
+            return View();
         }
 
         //  auction/undamaged
